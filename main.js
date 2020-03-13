@@ -37,3 +37,13 @@ arr = [2, 3, 4];
 console.log("  before_arr : ", arr);
 console.log("  return : %d", arr.customUnshift(1));
 console.log("  next_arr : ", arr, "\n");
+
+console.log("===Test customSplice===")
+
+const { customSplice } = require('./customSplice.js');
+Array.prototype.customSplice = customSplice;
+arr = [1, 2, 3, 4];
+console.log("  before_arr : ", arr);
+console.log("  return : ", arr.customSplice(1, 4, 7, 8, 9));
+console.log("  next_arr : ", arr, "\n");
+
