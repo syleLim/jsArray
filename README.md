@@ -9,9 +9,9 @@ JavaScript Array Object
  - **Make custom function in Array.prototype**<br><br>
 
 ## Rule
-1. Only use `delete` in Modification Method (not allow any other external function like `splice`)
+1. Only use `delete` and customFuntion in Modification Method (not allow any other external function like `splice`)
 2. Only use one of `while` or `for`
-3. Only use `.reduce()` in Iterative function (of course not allow when make reduce)
+3. Only use `.reduce()` and customFuction in Iterative function (of course not allow when make reduce)
 4. using name custom~ in file and func name (`.map()` => customMap.js `customMap()`)<br><br>
 
 ## Mathod
