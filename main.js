@@ -47,3 +47,22 @@ console.log("  before_arr : ", arr);
 console.log("  return : ", arr.customSplice(1, 4, 7, 8, 9));
 console.log("  next_arr : ", arr, "\n");
 
+console.log("===Test customSort===")
+
+const { customSort } = require('./customSort.js');
+Array.prototype.customSort = customSort;
+arr = [{no : 3, n : 'a'}, {no : 1, n: 'b'}, {no : 2, n:'c'}];
+console.log("  before_arr : ", arr);
+const f = (key) => {
+    return function (a, b) {
+        return a[key] - b[key];
+    }
+}
+console.log("  return : ", arr.customSort(f('no')));
+console.log("  next_arr : ", arr, "\n");
+arr = ['aaaa', 'bb', 'aa', 'bbbb'];
+console.log("  before_arr : ", arr);
+console.log("  return : ", arr.customSort());
+console.log("  next_arr : ", arr, "\n");
+
+
