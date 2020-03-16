@@ -66,3 +66,18 @@ console.log("  return : ", arr.customSort());
 console.log("  next_arr : ", arr, "\n");
 
 
+console.log("===Test customUnConcat===")
+
+const {cunstomConcat} = require('./customConcat.js');
+Array.prototype.cunstomConcat = cunstomConcat;
+a = [1, 2, [5, 6]];
+b = [4, 5]
+c = [1, [3, 4, 5], 3]
+console.log("  before_a : ", a, " before_b : ", b, " before_c : ", c , " + 2");
+d = a.cunstomConcat(b, c, 2)
+console.log("  return : ", d);
+console.log("  after_a : ", a, " after_b : ", b, " after_c : ", c, '\n');
+console.log("     value change");
+console.log("  a[2][0] = 300, b[0] = 100, c[1][0] = 200");
+a[2][0] = 300;b[0] = 100;c[1][0] = 200;
+console.log("  change_value : ", d, '\n');
