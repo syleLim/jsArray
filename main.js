@@ -81,3 +81,12 @@ console.log("     value change");
 console.log("  a[2][0] = 300, b[0] = 100, c[1][0] = 200");
 a[2][0] = 300;b[0] = 100;c[1][0] = 200;
 console.log("  change_value : ", d, '\n');
+
+console.log("===Test customSlice===")
+
+const {customSlice} = require('./customSlice.js');
+Array.prototype.customSlice = customSlice;
+arr = [1, 2, 3, 4];
+console.log("  before_arr : ", arr);
+console.log("  return : ", arr.customSlice(-5, 3));
+console.log("  next_arr : ", arr, "\n");
