@@ -139,3 +139,13 @@ console.log("  arr : ", arr, " multiply 2 to string");
 console.log("  return : ", arr.customReduce((acc, cur, i) => {
     return acc + (cur * 2);
 }, []), "\n");
+
+console.log("===Test customMap===")
+
+const {customMap} = require('./customMap.js');
+Array.prototype.customMap = customMap;
+arr = [1, 2, 3, 4];
+console.log("  arr : ", arr, "multiply * 2 arr");
+console.log("  return : ", arr.customMap(e =>{
+    return e * 2;
+}));
