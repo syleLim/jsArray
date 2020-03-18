@@ -145,7 +145,27 @@ console.log("===Test customMap===")
 const {customMap} = require('./customMap.js');
 Array.prototype.customMap = customMap;
 arr = [1, 2, 3, 4];
-console.log("  arr : ", arr, "multiply * 2 arr");
+console.log("  arr : ", arr, "  multiply * 2 arr");
 console.log("  return : ", arr.customMap(e =>{
     return e * 2;
-}));
+}), "\n");
+
+
+console.log("===Test customEvery===")
+
+const {customEvery} = require('./customEvery.js');
+Array.prototype.customEvery = customEvery;
+arr1 = [2, 4, 6, 8];
+arr2 = [1, 2, 3, 4];
+console.log("  arr1 : ", arr1, " arr2 : ", arr2, "  apply % 2 === 0");
+console.log("  return : arr1 is ", arr1.customEvery(e => e % 2 === 0), " / arr2 is ", arr2.customEvery(e => e % 2 === 0), "\n");
+
+console.log("===Test customEvery===")
+
+const {customSome} = require('./customSome.js');
+Array.prototype.customSome = customSome;
+arr1 = [1, 3, 5, 7];
+arr2 = [1, 2, 3, 4];
+
+console.log("  arr1 : ", arr1, " arr2 : ", arr2, "  apply % 2 === 0");
+console.log("  return : arr1 is ", arr1.customSome(e => e % 2 === 0), " / arr2 is ", arr2.customSome(e => e % 2 === 0), "\n");
