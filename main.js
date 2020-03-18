@@ -115,6 +115,13 @@ const {customForEach} = require('./customForEach.js');
 Array.prototype.customForEach = customForEach;
 arr = [1, 2, 3, 4];
 new_arr = [];
+function g () {
+    this.b = 1;
+    this.c = 2;
+}
+c = new g();
 console.log("  arr : ", arr);
-console.log("  return : ", arr.customForEach(e => new_arr.push(e * 2)));
-console.log("  result : ", new_arr);
+console.log("  return : ", arr.customForEach(e => {
+    this.b = e
+}, c));
+console.log("  result : ", c.b);

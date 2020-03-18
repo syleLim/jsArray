@@ -9,10 +9,11 @@
  * 
 */
 
-exports.customForEach = function (callback , thisArg = this) {
+exports.customForEach = function (callback, thisArg = this) {
     let i;
 
     i = -1;
+    callback.bind(thisArg);
     while (++i < this.length)
-        callback(this[i], i, thisArg);
+        callback(this[i], i, this);
 }
