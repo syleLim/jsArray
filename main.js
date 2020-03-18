@@ -97,7 +97,7 @@ console.log("===Test customIndexOf===")
 const {customIndexOf} = require('./customIndexOf.js');
 Array.prototype.customIndexOf = customIndexOf;
 arr = [1, "string", "string", 4];
-console.log("  before_arr : ", arr);
+console.log("  arr : ", arr, " find 'string', index 2");
 console.log("  return : ", arr.customIndexOf("string", 2), "\n");
 
 console.log("===Test customLastIndexOf===")
@@ -105,5 +105,5 @@ console.log("===Test customLastIndexOf===")
 const {customLastIndexOf} = require('./customLastIndexOf.js');
 Array.prototype.customLastIndexOf = customLastIndexOf;
 arr = [1, "string", "string", 4];
-console.log("  before_arr : ", arr);
-console.log("  return : ", arr.customIndexOf("string", 2), "\n");
+console.log("  arr : ", arr, " find 'string', index 2");
+console.log("  return : ", arr.customLastIndexOf("string", 2), "\n");
