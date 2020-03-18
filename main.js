@@ -114,7 +114,7 @@ console.log("===Test customForEach===")
 const {customForEach} = require('./customForEach.js');
 Array.prototype.customForEach = customForEach;
 arr = [1, 2, 3, 4];
-new_arr = [];
+newArr = [];
 function g () {
     this.b = 1;
     this.c = 2;
@@ -125,3 +125,17 @@ console.log("  return : ", arr.customForEach(e => {
     this.b = e
 }, c));
 console.log("  result : ", c.b);
+
+console.log("===Test customReduce===")
+
+const {customReduce} = require('./customReduce.js');
+Array.prototype.customReduce = customReduce;
+arr = [1, 2, 3, 4];
+console.log("  arr : ", arr, " sum all thing");
+console.log("  return : ", arr.customReduce((acc, cur, i) => {
+    return acc + cur;    
+}), "\n");
+console.log("  arr : ", arr, " multiply 2 to string");
+console.log("  return : ", arr.customReduce((acc, cur, i) => {
+    return acc + (cur * 2);
+}, []), "\n");
