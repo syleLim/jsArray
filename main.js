@@ -107,3 +107,14 @@ Array.prototype.customLastIndexOf = customLastIndexOf;
 arr = [1, "string", "string", 4];
 console.log("  arr : ", arr, " find 'string', index 2");
 console.log("  return : ", arr.customLastIndexOf("string", 2), "\n");
+
+
+console.log("===Test customForEach===")
+
+const {customForEach} = require('./customForEach.js');
+Array.prototype.customForEach = customForEach;
+arr = [1, 2, 3, 4];
+new_arr = [];
+console.log("  arr : ", arr);
+console.log("  return : ", arr.customForEach(e => new_arr.push(e * 2)));
+console.log("  result : ", new_arr);
